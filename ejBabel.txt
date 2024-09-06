@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React con HTML</title>
+</head>
+<body>
+    <div id="elementreact" style="color:red"></div>
+    <div id="elem2" style="color:orange"></div>
+    <div id="elem3" style="color:green"></div>
+    <script>
+        let name = "Teresa Valencia";
+        let salary = 5200000;
+        let gender = false;
+    </script>
+    <script type="text/babel">
+        /*let elementoreact = document.getElementById('elementreact');
+        let elem2 = document.querySelector("elem2");
+        let elem3 = document.querySelector("elem3");*/
+
+        let vista = 
+                <div>
+                    <h1>React con HTML</h1>
+                    <p>Parece HTML pero es JSX</p>
+                </div>    
+        let vista1 = 
+                <div>
+                    <h1>Salario es: {salary}</h1>
+                    <p>Parece HTML pero es JSX</p>
+                </div>    
+        
+        ReactDOM.render(vista, document.getElementById('elementreact'));
+        ReactDOM.render(vista1, document.getElementById('elem2'));   
+        ReactDOM.render(<p>El nombre es: {name}</p>,document.getElementById('elem3'));     
+        ReactDOM.render(<p>El sexo es: {gender ? "Masculino":"Femenino"}</p>,document.getElementById('elem3'));     
+    </script>
+    
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone@7.10.3/babel.min.js" crossorigin></script>
+    <!-- <script src="https://unpkg.com/react@15.4.2/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@15.4.2/dist/react-dom.js"></script>
+    <script src="https://unpkg.com/babel-core@5.8.38/browser.min.js"></script> -->
+  </head>
+</body>
+</html>

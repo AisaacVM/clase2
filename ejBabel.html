@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo de JSX con HTML</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <style>
+        body{
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+            color: #333;
+        }
+
+        .contenedor{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .jsx-contenedor{
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            margin: 15px 0;
+            padding: 20px;
+            width: 90%;
+            max-width: 700px;
+            text-align: center;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .jsx-contenedor:hover{
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        .id{
+            color: #007bff;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        
+        p{
+            margin: 12px 0;
+        }
+
+        h2{
+            color: #2c3e50; /* Color gris oscuro para encabezado */
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+
+    </style>
+
+    <div class="contenedor">
+    <div id="elem1" class ="jsx-contenedor"></div>
+    <div id="elem2" class ="jsx-contenedor"></div>
+    <div id="elem3" class ="jsx-contenedor"></div>
+    </div>
+        <script>
+            let name = "Pepe Perez";
+            let salary = 5200000;
+            let gender = true;
+        </script>
+        <!--El siguiente codigo permite incrustar JSX en pagina-->
+        <script type="text/babel">
+            let vista = 
+                    <div>
+                        <h2>Estamos incrustando codigo de JSX en HTML</h2>
+                        <p class="id">Prueba de jsx</p>
+                    </div>
+            let vista2 =
+                     <div>
+                        <p>Nombre del empleado es: {name}</p>
+                        <p>El resultado del iva es: {salary * 19/100}</p>
+                    </div>
+            let vista3 =
+                    <div>
+                        <p>El sexo es: {gender ? "Masculino":"Femenino"}</p>
+                    </div>        
+                    
+                    // Renderizar el componente con el nombre de vista
+                    ReactDOM.render(vista, document.getElementById('elem1'))
+                    ReactDOM.render(vista2, document.getElementById('elem2'))
+                    ReactDOM.render(vista3, document.getElementById('elem3'));
+
+        </script>
+
+   <!--Librerias para babel con JSX-->
+<script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+<script src="https://unpkg.com/@babel/standalone@7.10.3/babel.min.js" crossorigin></script>
+</body>
+</html>
